@@ -283,7 +283,7 @@ class Game:
         self.score_bar = self.font.render("Pontos:" + str(self.score), True, (0, 0, 0))
         self.file = open("max.txt")
         self.max_score = int(self.file.read())
-        self.max_bar = self.font.render("Top:" + str(self.max_score), True, (0, 0, 0))
+        self.max_bar = self.font.render("TOP:" + str(self.max_score), True, (0, 0, 0))
         self.file.close()
         self.background_river = Background(self.screen, "river", 0)
         self.background_margin_left = Background(self.screen, "margin")
@@ -323,8 +323,7 @@ class Game:
                     self.max_score = self.score-2
                     self.file = open("max.txt", "w")
                     self.file.write(str(self.max_score))
-                    self.file.close()
-                    self.max_bar = self.font.render("Top:" + str(self.max_score), True, (0, 0, 0))
+                    self.max_bar = self.font.render("TOP:" + str(self.max_score), True, (0, 0, 0))
         if self.counter > 60 * self.multiplier * self.multiplier:
             chocs = ["slow", "fast", "big", "beneath"]
             if self.multiplier < 3:
@@ -368,7 +367,7 @@ class Game:
             self.file.close()
             self.file = open("max.txt")
             self.max_score = int(self.file.read())
-            self.max_bar = self.font.render("Top:" + str(self.max_score), True, (0, 0, 0))
+            self.max_bar = self.font.render("TOP:" + str(self.max_score), True, (0, 0, 0))
             self.file.close()
             self.counter = 0
             self.multiplier = 1
@@ -430,7 +429,7 @@ class Game:
         pg.draw.rect(self.screen, (128, 176, 0), (0, 0, int(self.margin*self.screen_width), 40))
         self.screen.blit(self.score_bar, (0, 5))
         pg.draw.rect(self.screen, (128, 176, 0), (int((1-self.margin) * self.screen_width), 0, self.screen_width, 40))
-        self.screen.blit(self.max_bar, ((1-self.margin) * self.screen_width, 5))
+        self.screen.blit(self.max_bar, ((1-self.margin) * self.screen_width+5, 5))
         pg.display.flip()
 
 
