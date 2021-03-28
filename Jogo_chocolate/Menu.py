@@ -79,10 +79,10 @@ if __name__ == '__main__':
     pg.init()
     screen_h = 500
     screen_w = 800
-    screen = pg.display.set_mode([screen_w, screen_h])
+    tela = pg.display.set_mode([screen_w, screen_h])
     menu = MainMenu(screen_w, screen_h)
     while not menu.over:
-        for event in pg.event.get():
-            menu.start_button.handle_event(event)
-        menu.draw_menu(screen)
+        for evento in pg.event.get():
+            menu.start_button.handle_event(evento)
+        menu.draw_menu(tela)
     pg.quit()
