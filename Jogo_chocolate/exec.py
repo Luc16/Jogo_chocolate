@@ -9,7 +9,7 @@ cx_Freeze.setup(
                                             "images/cenoura.png", "images/diamante.png", "images/fundo.png",
                                             "images/menu.png", "images/nestle.png", "images/ovo.png",
                                             "images/remo_frente.png", "images/remo_tras.png", "images/toblerone.png",
-                                            "images/umpalumpas.png"]}},
+                                            "images/umpalumpas.png", "max.txt"]}},
     executables = executables
 
     )
